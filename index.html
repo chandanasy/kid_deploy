@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('img/world.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+ 
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predicting the disease  -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter the value of Chronic Kidney Disease features >>></h1>
+        
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Blood Pressure" placeholder="Blood Pressure" required="required" />
+		<input type="text" name="Specific Gravity" placeholder="Specific Gravity" required="required" />
+		<input type="text" name="Albumin" placeholder="Albumin" required="required" />
+        <input type="text" name="Sugar" placeholder="Sugar" required="required" />
+		<input type="text" name="mean_compactness" placeholder="mean compactness" required="required" />
+		<br>
+    	<input type="text" name="Red Blood Cells" placeholder="Red Blood Cells" required="required" />
+        <input type="text" name="Pus Cell" placeholder="Pus Cell" required="required" />
+		<input type="text" name="Pus Cell Clumps" placeholder="Pus Cell Clumps" required="required" />
+    	<input type="text" name="Bacteria" placeholder="Bacteria" required="required" />
+        <input type="text" name="Blood Glucose" placeholder="Blood Glucose" required="required" />
+		<input type="text" name="Blood Urea" placeholder="Blood Urea" required="required" />
+		<br>
+    	<input type="text" name="Serum Creatinine" placeholder="Serum Creatinine" required="required" />
+        <input type="text" name="Sodium" placeholder="Sodium" required="required" />
+		<input type="text" name="Potassium" placeholder="Potassium" required="required" />
+    	<input type="text" name="Hemoglobin" placeholder="Hemoglobin" required="required" />
+        <input type="text" name="Packed Cell Volume" placeholder="Packed Cell Volume" required="required" />
+		<input type="text" name="White Blood Cell Count" placeholder="White Blood Cell Count" required="required" />
+    	<br>
+    	<input type="text" name="Red Blood Cell Count" placeholder="Red Blood Cell Count" required="required" />
+        <input type="text" name="Hypertension" placeholder="Hypertension" required="required" />
+		<input type="text" name="Diabetes Mellitus" placeholder="Diabetes Mellitus" required="required" />
+    	<input type="text" name="Coronary Artery Disease" placeholder="Coronary Artery Disease" required="required" />
+        <input type="text" name="Appetite" placeholder="Appetite" required="required" />
+		<input type="text" name="Pedal Edema" placeholder="Pedal Edema" required="required" />
+		<input type="text" name="Anemia" placeholder="Anemia" required="required" />
+		
+        <br>
+        <br>
+		
+		<!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css"  target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict CKD</strong></button></a>
+        </div>
+        
+       
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
